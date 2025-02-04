@@ -5,8 +5,7 @@ El usuario deberá agregar nombres mediante un campo de texto y un botón "Adici
 
 let listaDeAmigos = [];
 let numerosAleatorios = 0;
-
-console.log(listaDeAmigos)
+//let numeroDeElementos = 0;
 
 //Función para trabajar con los elementos del html
 
@@ -35,11 +34,11 @@ function agregarAmigos(){
             asignarTextoElemento("h2","El nombre ya ha sido agregado. Por favor ingrese otro.");
             return agregarAmigos();
         } else {
-            asignarTextoElemento("h2","El nombre es válido");
             listaDeAmigos.push(nuevoNombre);
-            console.log(listaDeAmigos);
             limpiarPantalla("#amigo");
             mostrarlosEnPantalla();
+     //       numeroDeElementos ++;
+       //     console.log(listaDeAmigos.length);
         }
     }
     return;
@@ -50,15 +49,24 @@ function agregarAmigos(){
 function mostrarlosEnPantalla () {
     listaMostrada = document.getElementById("listaAmigos").value;
     limpiarPantalla("#listaAmigos");
-    for (var elemento of listaDeAmigos)
+    for (var elemento of listaDeAmigos) {
         var li = document.createElement("li");  
         li.innerHTML = elemento;
-        document.querySelector("#listaAmigos").appendChild(li);
-        return;
+    }
+    document.querySelector("#listaAmigos").appendChild(li);
+    return;
     }
 
 //Sortearlos
 
-function sortearAmigos(){
+
+function sortearAmigo(){
+    console.log(listaDeAmigos)
+    if (listaDeAmigos.length == 0) {
+        alert("Ingresa amigos antes de sortear.");
+    } else {
+        let indice = Math.floor(Math.random()*listaDeAmigos.length);
+        asignarTextoElemento("h2",`El amigo secreto elegido es: ${listaDeAmigos[indice]}`)
+    }
     return;
 }
