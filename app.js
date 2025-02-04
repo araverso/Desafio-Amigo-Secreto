@@ -37,8 +37,6 @@ function agregarAmigos(){
             listaDeAmigos.push(nuevoNombre);
             limpiarPantalla("#amigo");
             mostrarlosEnPantalla();
-     //       numeroDeElementos ++;
-       //     console.log(listaDeAmigos.length);
         }
     }
     return;
@@ -58,7 +56,6 @@ function mostrarlosEnPantalla () {
     }
 
 //Sortearlos
-
 
 function sortearAmigo(){
     console.log(listaDeAmigos)
