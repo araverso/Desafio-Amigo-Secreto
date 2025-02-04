@@ -66,7 +66,7 @@ function sortearAmigo(){
         alert("Ingresa amigos antes de sortear.");
     } else {
         let indice = Math.floor(Math.random()*listaDeAmigos.length);
-        asignarTextoElemento("h2",`El amigo secreto elegido es: ${listaDeAmigos[indice]}`)
+        asignarTextoElemento("#resultado",`El amigo secreto elegido es: ${listaDeAmigos[indice]}`)
     }
     return;
 }
