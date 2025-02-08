@@ -5,7 +5,6 @@ El usuario deberá agregar nombres mediante un campo de texto y un botón "Adici
 
 let listaDeAmigos = [];
 let numerosAleatorios = 0;
-//let numeroDeElementos = 0;
 
 //Función para trabajar con los elementos del html
 
@@ -19,6 +18,7 @@ function asignarTextoElemento(elemento, texto) {
 
 function limpiarPantalla(elementoId){
     let nombreLimpio = document.querySelector(elementoId).value = "";
+    return nombreLimpio;
 }
 
 //Función que agrega los amigos a la lista
@@ -33,11 +33,22 @@ function agregarAmigos(){
         if (listaDeAmigos.includes(nuevoNombre)) {
             asignarTextoElemento("h2","El nombre ya ha sido agregado. Por favor ingrese otro.");
             return agregarAmigos();
+        } else if (nuevoNombre[nuevoNombre.length-1] == " ") {
+            nuevoNombre = nuevoNombre.slice(0,nuevoNombre.length-1); //Para eliminar el espacio
+            if (listaDeAmigos.includes(nuevoNombre)) {
+                asignarTextoElemento("h2","El nombre ya ha sido agregado. Por favor ingrese otro.");
+                return agregarAmigos();
+            } else {
+                listaDeAmigos.push(nuevoNombre);
+                limpiarPantalla("#amigo");
+                mostrarlosEnPantalla();
+            }
         } else {
             listaDeAmigos.push(nuevoNombre);
             limpiarPantalla("#amigo");
             mostrarlosEnPantalla();
         }
+
     }
     return;
 }
@@ -58,12 +69,21 @@ function mostrarlosEnPantalla () {
 //Sortearlos
 
 function sortearAmigo(){
-    console.log(listaDeAmigos)
-    if (listaDeAmigos.length == 0) {
+        if (listaDeAmigos.length == 0) {
         alert("Ingresa amigos antes de sortear.");
     } else {
         let indice = Math.floor(Math.random()*listaDeAmigos.length);
-        asignarTextoElemento("#resultado",`El amigo secreto elegido es: ${listaDeAmigos[indice]}`)
+        asignarTextoElemento("#resultado",`El amigo secreto elegido es: ${listaDeAmigos[indice]}`);
     }
+    return;
+}
+
+//Funcion que reinicia la lista
+
+function reiniciarLista() {
+    listaDeAmigos = [];
+    numerosAleatorios = 0;
+    asignarTextoElemento("#listaAmigos","");
+    asignarTextoElemento("#resultado",""); 
     return;
 }
