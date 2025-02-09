@@ -15,4 +15,4 @@
 
  ## 📁 Ejecutar el proyecto
 
-*Para acceder al proyecto ingrese al siguiente enlace: *
+## Para acceder al proyecto ingrese al siguiente enlace: https://araverso.github.io/Desafio-Alura/ 
