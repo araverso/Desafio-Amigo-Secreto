@@ -15,4 +15,4 @@
 
  ## 📁 Ejecutar el proyecto
 
-## Para acceder al proyecto ingrese al siguiente enlace: [https://araverso.github.io/Desafio-Alura/ ](https://araverso.github.io/Desafio-Amigo-Secreto/)
+## Para acceder al proyecto ingrese al siguiente enlace: https://araverso.github.io/Desafio-Amigo-Secreto/
