@@ -28,7 +28,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: "Tagesschrift";
-    background-image: url(/imagenes/20240716_121448.jpg);
+    background-image: url(../Desafio-Alura/imagenes/20240716_121448.jpg);
 }
 
 .main-botones{
